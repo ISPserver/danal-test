@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:8.0.28
+    platform: linux/amd64
+    container_name: danal-mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --ft_min_word_len=1
+    restart: always
+    ports:
+      - 3313:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER: danal
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: danal
+      TZ: Asia/Seoul
